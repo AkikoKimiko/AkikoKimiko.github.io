@@ -1,26 +1,14 @@
 const stories={
-en:{heading:"The story behind the art",text:`Two souls finding each other.
-
-The moment they recognize one another. As if they had shared a thousand lifetimes and found their way back to each other again and again.
-
-When two worlds meet and something emerges that is greater than the sum of its parts. A magic that cannot be explained and needs no words.
-
-Sometimes, we do not meet someone for the first time. We simply remember them.
-
-Because sometimes, everything has already been said without a single word.`},
-de:{heading:"Die Geschichte hinter dem Werk",text:`Eine Begegnung zweier Seelen, die sich finden.
-
-Der Moment, in dem sie einander erkennen. Wiedererkennen. Als hätten sie bereits tausende Leben miteinander geteilt und sich immer wieder gefunden.
-
-Wenn zwei Welten aufeinandertreffen und etwas entsteht, das größer ist als die Summe ihrer Teile. Eine Magie, die sich nicht erklären lässt und keiner Worte bedarf.
-
-Denn manchmal begegnet man einem Menschen nicht zum ersten Mal. Man erinnert sich lediglich wieder an ihn.
-
-Wo keine Worte nötig sind, weil längst alles gesagt ist.`}
+en:{heading:"The story behind the art",text:`Two souls finding each other.\n\nThe moment they recognize one another. As if they had shared a thousand lifetimes and found their way back to each other again and again.\n\nWhen two worlds meet and something emerges that is greater than the sum of its parts. A magic that cannot be explained and needs no words.\n\nSometimes, we do not meet someone for the first time. We simply remember them.\n\nBecause sometimes, everything has already been said without a single word.`,note:""},
+de:{heading:"Die Geschichte hinter dem Werk",text:`Eine Begegnung zweier Seelen, die sich finden.\n\nDer Moment, in dem sie einander erkennen. Wiedererkennen. Als hätten sie bereits tausende Leben miteinander geteilt und sich immer wieder gefunden.\n\nWenn zwei Welten aufeinandertreffen und etwas entsteht, das größer ist als die Summe ihrer Teile. Eine Magie, die sich nicht erklären lässt und keiner Worte bedarf.\n\nDenn manchmal begegnet man einem Menschen nicht zum ersten Mal. Man erinnert sich lediglich wieder an ihn.\n\nWo keine Worte nötig sind, weil längst alles gesagt ist.`,note:""},
+"love-en":{heading:"The story behind the art",text:`Countless worlds. Countless little universes, scattered across the endless vastness of space. Each one existing on its own, yet connected in ways the eye can barely comprehend.\n\nFrom the darkness, a blossom rises. Its stem winds like a strand of DNA, like the invisible thread connecting all forms of life. A tiny, rocky island drifting through a sea of stars and possibilities.\n\nBecause sometimes, the most beautiful things do not exist on the surface. They grow deep within us, hidden in our very essence — until they find their way into the light.\n\nPerhaps that is what love is: not something we must find or learn, but something that has always lived within us. It is part of what makes us who we are — and at the same time, the invisible thread that connects us with all life.\n\nA quiet glow travelling through countless worlds. Sometimes visible, sometimes hidden. Yet never truly gone.\n\nSome worlds may drift apart. But love remains — in all that we are, and all that connects us.\n\nLove. Always.`,note:"The lettering and selected particles are painted with fluorescent colour, revealing another kind of glow in the dark."},
+"love-de":{heading:"Die Geschichte hinter dem Werk",text:`Unzählige Welten. Unzählige kleine Universen, verstreut in der endlosen Weite des Alls. Jedes für sich allein – und doch auf eine Weise miteinander verbunden, die das Auge kaum erfassen kann.\n\nAus dem Dunkel erhebt sich eine Blüte. Ihr Stiel windet sich wie ein Strang aus DNA, wie das unsichtbare Band, das alles Leben miteinander verbindet. Eine kleine, felsige Insel, treibend in einem Meer aus Sternen und Möglichkeiten.\n\nDenn manchmal liegt das Schönste nicht an der Oberfläche. Es wächst tief in uns, verborgen im Innersten – bis es seinen Weg ins Licht findet.\n\nVielleicht ist Liebe genau das: nicht etwas, das wir erst finden oder lernen müssen, sondern etwas, das längst in uns wohnt. Sie ist ein Teil dessen, was uns ausmacht – und zugleich das unsichtbare Band, das uns mit allem Leben verbindet.\n\nEin leises Leuchten, das durch unzählige Welten wandert. Manchmal sichtbar, manchmal verborgen. Doch niemals wirklich fort.\n\nManche Welten mögen auseinanderdriften. Doch die Liebe bleibt – in allem, was wir sind, und allem, was uns verbindet.\n\nLove. Always.`,note:"Der Schriftzug und ausgewählte Partikel sind mit fluoreszierender Farbe gemalt und entfalten im Dunkeln eine eigene Leuchtkraft."}
 };
 function setStoryLanguage(language){
-const heading=document.getElementById("story-heading"),text=document.getElementById("story-text"),en=document.getElementById("lang-en"),de=document.getElementById("lang-de");
+const heading=document.getElementById("story-heading"),text=document.getElementById("story-text"),en=document.getElementById("lang-en"),de=document.getElementById("lang-de"),note=document.getElementById("work-note");
 if(!heading||!text||!en||!de)return;
-heading.textContent=stories[language].heading;text.textContent=stories[language].text;
+const key=document.body.dataset.work==="love"?`love-${language}`:language;
+heading.textContent=stories[key].heading;text.textContent=stories[key].text;
+if(note&&stories[key].note!==undefined)note.textContent=stories[key].note;
 en.classList.toggle("active",language==="en");de.classList.toggle("active",language==="de");
 }
