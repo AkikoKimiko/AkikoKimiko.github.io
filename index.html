@@ -94,40 +94,38 @@
   font-style: normal;
   font-weight: normal;
 
-  background: linear-gradient(
-    110deg,
-    #A98243 0%,
-    #E4D1A5 20%,
-    #B58C4E 40%,
-    #F3E5BF 50%,
-    #B58C4E 65%,
-    #D9BD83 85%,
-    #A98243 100%
-  );
+  background-color: #B58C4E;
+  background-image:
+    radial-gradient(circle, #FFF8DF 0.8px, transparent 1.5px),
+    radial-gradient(circle, #EAD39D 1px, transparent 1.8px),
+    radial-gradient(circle, #FFF0C4 0.7px, transparent 1.4px),
+    linear-gradient(
+      135deg,
+      #A47A3D,
+      #E5CD96,
+      #B58C4E,
+      #F1E2B9,
+      #A47A3D
+    );
 
-  background-size: 250% auto;
-  background-position: 0% center;
+  background-size:
+    17px 19px,
+    23px 21px,
+    13px 17px,
+    100% 100%;
+
+  background-position:
+    2px 3px,
+    9px 11px,
+    5px 8px,
+    center;
 
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  animation: goldShimmer 8s ease-in-out infinite alternate;
+  -webkit-text-fill-color: transparent;
 }
-
-@keyframes goldShimmer {
-  from {
-    background-position: 0% center;
-  }
-  to {
-    background-position: 100% center;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero h1 span {
-    animation: none;
-  }
     }
 
     .hero-description {
