@@ -93,17 +93,29 @@
   display: block;
   font-style: normal;
   font-weight: normal;
-  color: #C5A46D;
   background: linear-gradient(
-    135deg,
+    110deg,
     #A47A3D 0%,
-    #D9BD83 35%,
-    #B58C4E 65%,
-    #E5CD96 100%
+    #D9BD83 25%,
+    #FFF5D8 45%,
+    #B58C4E 55%,
+    #F5E5B8 70%,
+    #A47A3D 100%
   );
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: goldShimmer 5s ease-in-out infinite alternate;
+}
+
+@keyframes goldShimmer {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 100% center;
+  }
 }
 
     .hero-description {
