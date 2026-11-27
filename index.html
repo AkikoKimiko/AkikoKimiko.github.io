@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akiko Kimiko – Art, Objects, Formulas and Kitchen. A creative atelier.">
+  <title>Akiko Kimiko — Creative Atelier</title>
+
+  <style>
+    :root {
+  --cream: #F5F0E6;
+  --dark: #37332D;
+  --muted: #82796B;
+  --accent: #C5A46D;
+  --line: #D9C8A8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-size: 23px;
+      letter-spacing: 4px;
+      font-weight: normal;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 78vh;
+      padding: 100px 7%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 10vw, 125px);
+      font-weight: normal;
+      line-height: 0.95;
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 390px;
+      margin-top: 35px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .discover {
+      margin-top: 45px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      width: fit-content;
+      border-bottom: 1px solid var(--dark);
+      padding-bottom: 8px;
+    }
+
+    .section {
+      padding: 100px 7%;
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: normal;
+    }
+
+    .section-heading p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 45px 30px;
+    }
+
+    .category-image {
+      aspect-ratio: 4 / 3;
+      background: #ddd5c8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .category-image span {
+      font-size: 65px;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .art-image {
+      background: linear-gradient(135deg, #b9a995, #e3d8c7, #827b6d);
+    }
+
+    .objects-image {
+      background: linear-gradient(135deg, #77756a, #c9bba6, #e2d9ca);
+    }
+
+    .formulas-image {
+      background: linear-gradient(135deg, #b2a18c, #e4d9c8, #8d9078);
+    }
+
+    .kitchen-image {
+      background: linear-gradient(135deg, #a18b72, #d8c8ae, #777b60);
+    }
+
+    .category-info {
+      padding-top: 18px;
+    }
+
+    .category-info h3 {
+      font-size: 27px;
+      font-weight: normal;
+    }
+
+    .category-info p {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about {
+      background: #e8e1d6;
+      text-align: center;
+      padding: 110px 12%;
+    }
+
+    .about h2 {
+      font-size: clamp(35px, 5vw, 58px);
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 17px;
+      line-height: 1.9;
+      color: #6e695e;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 110px 7%;
+    }
+
+    .contact h2 {
+      font-size: clamp(40px, 6vw, 70px);
+      font-weight: normal;
+    }
+
+    .contact p {
+      margin-top: 20px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 65vh;
+        padding-top: 75px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="logo">AKIKO KIMIKO</a>
+
+    <nav>
+      <a href="#art">Art</a>
+      <a href="#objects">Objects</a>
+      <a href="#formulas">Formulas</a>
+      <a href="#kitchen">Kitchen</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <p class="eyebrow">A creative atelier</p>
+
+      <h1>
+        AKIKO
+        <span>KIMIKO</span>
+      </h1>
+
+      <p class="hero-description">
+        A collection of creative expressions.
+        Art, objects, formulas and culinary inspiration.
+        Created with joy, freedom and love.
+      </p>
+
+      <a href="#art" class="discover">
+        Discover the atelier ↓
+      </a>
+    </section>
+
+    <section class="section" id="art">
+      <div class="section-heading">
+        <p class="eyebrow">01 — Visual expression</p>
+        <h2>Art & Creations</h2>
+        <p>Original works, ideas and artistic explorations.</p>
+      </div>
+
+      <div class="grid">
+        <article>
+          <div class="category-image art-image">
+            <span>Art</span>
+          </div>
+          <div class="category-info">
+            <h3>Paintings</h3>
+            <p>Original artworks and visual expressions.</p>
+          </div>
+        </article>
+
+        <article id="objects">
+          <div class="category-image objects-image">
+            <span>Form</span>
+          </div>
+          <div class="category-info">
+            <h3>Objects & Sculptures</h3>
+            <p>Three-dimensional creations and unique pieces.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="formulas">
+      <div class="section-heading">
+        <p class="eyebrow">02 — Creative experiments</p>
+        <h2>Formulas</h2>
+        <p>Personal creations, ingredients and formulations.</p>
+      </div>
+
+      <div class="category-image formulas-image">
+        <span>Botanical</span>
+      </div>
+    </section>
+
+    <section class="section" id="kitchen">
+      <div class="section-heading">
+        <p class="eyebrow">03 — Culinary inspiration</p>
+        <h2>The Intuitive Kitchen</h2>
+        <p>Cooking by feeling, creating with what is there.</p>
+      </div>
+
+      <div class="category-image kitchen-image">
+        <span>Kitchen</span>
+      </div>
+    </section>
+
+    <section class="about">
+      <p class="eyebrow">The philosophy</p>
+      <h2>Created with joy.</h2>
+      <p>
+        Freedom to create, curiosity to explore
+        and love for the little things in life.
+        Every creation begins with an idea,
+        a feeling or a moment of inspiration.
+      </p>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Let's connect.</h2>
+      <p>
+        For inquiries, collaborations and questions
+        about my work, please get in touch.
+      </p>
+      <p>Contact details coming soon.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 AKIKO KIMIKO</span>
+    <span>ART · OBJECTS · FORMULAS · KITCHEN</span>
+  </footer>
+
+</body>
+</html>
