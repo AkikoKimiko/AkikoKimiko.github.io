@@ -1,0 +1,1 @@
+Upload all HTML, CSS and JS files from this package into the ROOT of your GitHub Pages repository. Keep your existing images folder and images/unspoken.png. Do not delete or replace that image. index.html is the start page; ART opens art.html; the UNSPOKEN thumbnail opens unspoken.html.
