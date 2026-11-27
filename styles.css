@@ -34,3 +34,5 @@ footer{border-top:1px solid var(--line);padding:28px 7%;display:flex;justify-con
 @media(max-width:650px){header{flex-direction:column;gap:20px}nav{justify-content:center;gap:14px}.hero{min-height:65vh;padding-top:70px}.hero h1{letter-spacing:-2px}.section{padding-top:65px;padding-bottom:65px}.category-grid,.art-grid{grid-template-columns:1fr}.story-box{padding:24px 20px}.story-header{align-items:flex-start;flex-direction:column}}
 
 .work-note{max-width:900px;margin:18px auto 0;text-align:center;color:var(--muted);font-size:13px;font-style:italic;line-height:1.7}
+
+.art-subtitle{display:block;color:var(--muted);font-size:12px;letter-spacing:1px;margin-top:5px}
